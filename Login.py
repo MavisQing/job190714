@@ -1,13 +1,15 @@
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
-import unittest, time, re
+import unittest, time, re,os,sys
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 
-
+current_directory = os.path.dirname(os.path.abspath(__file__))
+root_path = os.path.abspath(os.path.dirname(current_directory) + os.path.sep + ".")
+sys.path.append(root_path)
 class LoginDemo(unittest.TestCase):
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome("C:\\Python37\\chromedriver.exe")
     driver.implicitly_wait(30)
     base_url = "http://www.doclever.cn"
     verificationErrors = []
@@ -107,6 +109,7 @@ class LoginDemo(unittest.TestCase):
 
 
 if __name__ == "__main__":
+
     suite = unittest.TestSuite()
     tests = [LoginDemo("test_1_login"), LoginDemo("test_2_create_group"), LoginDemo("test_3_create_interface"), LoginDemo("test_4_logout")]
     suite.addTests(tests)
