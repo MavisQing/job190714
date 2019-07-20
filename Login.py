@@ -9,7 +9,7 @@ current_directory = os.path.dirname(os.path.abspath(__file__))
 root_path = os.path.abspath(os.path.dirname(current_directory) + os.path.sep + ".")
 sys.path.append(root_path)
 class LoginDemo(unittest.TestCase):
-    driver = webdriver.Chrome("C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe")
+    driver = webdriver.Chrome()
     driver.implicitly_wait(30)
     base_url = "http://www.doclever.cn"
     verificationErrors = []
