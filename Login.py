@@ -11,7 +11,7 @@ sys.path.append(root_path)
 class LoginDemo(unittest.TestCase):
     option = webdriver.ChromeOptions()
     option.binary_location = r'C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chrome.exe'
-    driver = webdriver.Chrome("C:\Python37\chromedriver.exe")
+    driver = webdriver.Chrome(chrome_options=option)
     driver.implicitly_wait(30)
     base_url = "http://www.doclever.cn"
     verificationErrors = []
